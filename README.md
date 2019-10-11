@@ -66,3 +66,40 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+### Sempre Health Question
+
+## 1. Our desktop screens are too big and our CEO can easily see what we are doing. Now we need the game to work on mobile screens. Explain what parts of your solution will need to change to accommodate this request.
+ 1. board should add media query styles to change its size based on the device screen resolution.
+
+ 2. The size of the board row and the size of the board cell should be calculated based on the size of board. it should calculated in js code and pass the size(width, height) as the style variable into className.
+
+## 2. Players are becoming too huddled around each other's desktops and would like to take the game of Connect 4 online. What are some technologies that would make realtime games possible and what kind of data would need to be communicated to the other players?
+we could have REST API to update the status of each game. 
+
+new_game end point: 
+    GET: {
+
+    }
+    response: {
+        game_id: 123,
+        init_player_id: 01
+    }
+
+add_player/join_game end point:
+    POST: {
+        game_id: 123
+    }
+    response: {
+        game_id: 123
+        new_player_id: 02
+    }
+
+play_game end point:
+    POST:{
+        game_id: 123,
+        play_id: 1,
+        step: [0, 1]
+    }
